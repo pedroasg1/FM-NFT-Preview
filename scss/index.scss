@@ -1,0 +1,168 @@
+@use 'variable';
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    width: 100%;
+    min-height: 100vh;
+    font-family: variable.$default-font;
+    background: variable.$very-dark-blue-main;
+}
+
+.card{
+    position: absolute;
+    width: 360px;
+    height: 600px;
+    background: variable.$very-dark-blue-card;
+    padding: 25px;
+    margin: 0 auto;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    border-radius: 15px;
+
+    &__picture{
+        position: relative;
+    }
+
+    .card__icon_view{
+        position: absolute;
+        top: 0;
+        background: hsla(178, 100%, 50%, 0.507);
+        width: 100%;
+        height: calc(100% - 23px);
+        border-radius: 15px;
+        z-index: 1;
+        opacity: 0;
+        transition: opacity .5s;
+
+        &:hover{
+            opacity: 1;
+            cursor: pointer;
+        }
+
+
+        &_image{
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+        }
+    }
+
+    &__image{
+        width: 100%;
+        border-radius: 10px;
+        background: variable.$cyan;
+        margin-bottom: 20px;
+    }
+
+    &__title{
+        color: variable.$white;
+        font-weight: 400;
+        font-size: 23px;
+
+        &:hover{
+            color: variable.$cyan;
+            cursor: pointer;
+        }
+    }
+
+    &__description{
+        color: variable.$soft-blue;
+        font-size: 18px;
+        margin-top: 20px;
+    }
+
+    &__icons{
+        display: flex;
+        justify-content: left;
+        align-items: center;
+        margin-top: 20px;
+        padding-bottom: 20px;
+        border-bottom: 1px solid variable.$very-dark-blue-line;
+
+        &__image{
+            width: 20px;
+            height: 25px;
+        }
+
+        .card__eth{
+            color: variable.$cyan;
+            margin-left: 10px;
+            font-size: 18px;
+            font-weight: 600;
+        }
+
+        .card__icon--dif{
+            margin-left: 90px;
+        }
+
+        .card__eth--dif{
+            color: variable.$soft-blue;
+            font-weight: 400;
+        }
+    }
+
+    &__avatar{
+        display: flex;
+        justify-content: left;
+        align-items: center;
+        margin-top: 20px;
+
+        &__image{
+            width: 30px;
+            height: 30px;
+            border-radius: 50%;
+            border: 1px solid white;
+        }
+
+        .card__autor{
+            font-size: 17px;
+            font-weight: 300;
+            color: variable.$soft-blue;
+            margin-left: 13px;
+        }
+
+        .span{
+            color: variable.$white;
+        }
+
+        .span:hover{
+            color: variable.$cyan;
+            cursor: pointer;
+        }
+    }
+}
+
+.attribution{
+    margin-top: 90px;
+    color: white;
+}
+
+@media screen and (max-width:320px) {
+    .card{
+        width: 300px;
+        height: 520px;
+
+        &__description{
+            font-size: 15px;
+        }
+
+        &__icon{
+            width: 10px;
+        }
+
+        .card__eth{
+            font-size: 15px;
+        }
+
+        .card__icon--dif{
+            margin-left: 65px;
+        }
+    }
+}
